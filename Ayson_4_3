@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double a, b, angle_c, side_c, radian_c;
+
+	cout << "Enter side a: ";
+	cin >> a;
+
+	cout << "Enter side b: ";
+	cin >> b;
+
+	cout << "Enter angle C: ";
+	cin >> angle_c;
+
+	radian_c = angle_c * 3.14 / 180;
+
+	side_c = sqrt((a * a) + (b * b) - (2 * a * b * cos(radian_c)));
+
+	cout << "Side c is: " << side_c << endl;
+
+	return 0;
+}
