@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double s1, s2, hypotenuse;
+
+	cout << "Enter Side 1: ";
+	cin >> s1;
+
+	cout << "Enter Side 2: ";
+	cin >> s2;
+
+	hypotenuse = sqrt((s1 * s1) + (s2 * s2));
+
+	cout << "\nThe hypotenuse is: " << hypotenuse << endl;
+
+	return 0;
+}
