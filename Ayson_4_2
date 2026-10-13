@@ -1,0 +1,65 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string payroll_period, employee_id, employee_name;
+	double monthly_salary, late_absences;
+	double hourlyrate, latehours, latedeductions;
+	double philhealth, pagibig, sss, tax;
+	double TotalEarnings, TotalDeductions, NetPay;
+
+	cout << "Enter Payroll Period: ";
+	getline(cin, payroll_period);
+	
+	cout << "Enter Employee ID: ";
+	getline(cin, employee_id);
+	
+	cout << "Enter Employee Name: ";
+	getline(cin, employee_name);
+
+	cout << "Enter Monthly Salary: ";
+	cin >> monthly_salary;
+
+	cout << "Enter Lates and Absences in minutes: ";
+	cin >> late_absences;
+
+	hourlyrate = (monthly_salary / 30.0) / 8.0;
+	latehours = late_absences / 60;
+	latedeductions = latehours * hourlyrate;
+
+	philhealth = 1000;
+	pagibig = 800;
+	sss = 1200;
+	tax = 0.12 * monthly_salary;
+
+	TotalEarnings = monthly_salary;
+	TotalDeductions = latedeductions + philhealth + pagibig + sss + tax;
+	NetPay = TotalEarnings - TotalDeductions;
+
+	cout << fixed << setprecision(2);
+
+	cout << "\n\nFEU - Institute of Technology\n\n";
+
+	cout << "Employee ID: " << employee_id;
+	cout << "\t\tPayroll Period: " << payroll_period << endl;
+	cout << "Employee ID: " << employee_name << endl;
+
+	cout << "\nIncome\t\t\t\t\tDeductions" << endl;
+
+	cout << "Monthly Salary Php" << monthly_salary;
+	cout << "\tLates and Absences ( " << latedeductions << ")" << endl;
+
+	cout << "\t\t\t\t\tPhilhealth (" << philhealth << ")" << endl;
+	cout << "\t\t\t\t\tPag-ibig (" << pagibig << ")" << endl;
+	cout << "\t\t\t\t\tSSS (" << sss << ")" << endl;
+	cout << "\t\t\t\t\tTax (" << tax << ")" << endl;
+
+	cout << "\nTotal Earnings: Php " << TotalEarnings << endl;
+	cout << "Total Deductions: Php " << TotalDeductions << endl;
+	cout << "Net Pay: Php " << NetPay << endl;
+
+	return 0;
+}
